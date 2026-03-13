@@ -1,4 +1,20 @@
 package player.multimediaelement;
 
-public class MultimediaElement {
+public abstract class MultimediaElement {
+
+    private final String title;
+    private final Type type;
+
+    public MultimediaElement(String title, Type type) {
+        this.title = title;
+        this.type = type;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Type getType() {
+        return type;
+    }
 }
