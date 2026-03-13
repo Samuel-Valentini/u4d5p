@@ -1,34 +1,23 @@
-import player.multimediaelement.playable.Audio;
-import player.multimediaelement.playable.Video;
-import player.multimediaelement.unplayable.Image;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Image img1 = new Image("Cielo Stellato", 5);
-        img1.show();
-        img1.aumentaLuminosita();
-        img1.show();
-        img1.diminuisciLuminosita();
-        img1.show();
-        img1.diminuisciLuminosita(10);
-        img1.show();
-        System.out.println(img1.getBrightness());
-        img1.setBrightness(200);
-        System.out.println(img1.getBrightness());
-        img1.setBrightness(-200);
-        System.out.println(img1.getBrightness());
+        // player start
 
-        Video vid1 = new Video("Vacanze", 12);
-        vid1.play();
-        vid1.setBrightness(12);
-        vid1.setVolume(12);
-        vid1.aumentaLuminosita(5);
-        vid1.abbassaVolume(5);
-        vid1.play();
+        Scanner scanner = new Scanner(System.in);
 
-        Audio aud1 = new Audio("Suoni celebri", 3, 5);
-        aud1.play();
+        System.out.println("Quanti elementi multimediali vuoi caricare? Inserisci un numero (Default = 5)");
+
+        String input = scanner.nextLine();
+        int arrayLength;
+        if (input.isBlank()) {
+            arrayLength = 5;
+        } else {
+            arrayLength = Integer.parseInt(input);
+        }
+
+        System.out.println("Hai deciso di caricare " + arrayLength + " elementi.");
 
     }
 }
