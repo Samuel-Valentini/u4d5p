@@ -1,3 +1,5 @@
+import player.multimediaelement.MultimediaElement;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,10 +16,29 @@ public class Main {
         if (input.isBlank()) {
             arrayLength = 5;
         } else {
-            arrayLength = Integer.parseInt(input);
+            try {
+                arrayLength = Integer.parseInt(input);
+            } catch (NumberFormatException error) {
+                arrayLength = 5;
+            }
+
         }
 
         System.out.println("Hai deciso di caricare " + arrayLength + " elementi.");
 
+        MultimediaElement[] arrayOfMultimediaElement = new MultimediaElement[arrayLength];
+
+        for (int i = 0; i < arrayLength; i++) {
+            String fileType;
+
+            do {
+                System.out.println("Digita 'a' per caricare un audio, 'v' per caricare un video, 'i' per caricare un'immagine");
+                fileType = scanner.nextLine();
+            } while (!(fileType.equals("a") || fileType.equals("v") || fileType.equals("i")));
+            
+
+        }
+
     }
+
 }
