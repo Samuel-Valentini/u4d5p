@@ -31,10 +31,12 @@ public class Main {
 
         System.out.println("Hai deciso di caricare " + arrayLength + " elementi.");
 
+
         MultimediaElement[] arrayOfMultimediaElement = new MultimediaElement[arrayLength];
 
         for (int i = 0; i < arrayLength; i++) {
 
+            System.out.println();
             System.out.println("Perfetto, inseriamo l'elemento n. " + (i + 1));
 
             String fileType;
@@ -94,15 +96,16 @@ public class Main {
             }
 
         }
-
+        System.out.println();
         System.out.println("Gli elementi scelti sono:");
+        System.out.println();
         for (int i = 0; i < arrayOfMultimediaElement.length; i++) {
             System.out.println("Elemento n. " + (i + 1) + ": " + arrayOfMultimediaElement[i]);
 
         }
 
-       
         while (true) {
+            System.out.println();
             System.out.println("Inserisci il numero dell'elemento che vuoi riprodurre, 0 per uscire.");
             int toPlay = Integer.parseInt(scanner.nextLine());
             if (toPlay == 0) {
