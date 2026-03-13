@@ -41,37 +41,25 @@ public class Image extends Unplayable implements Brightness {
     @Override
     public void aumentaLuminosita(int brightnessToAdd) {
         brightnessToAdd = Math.abs(brightnessToAdd);
-        if (this.brightness + brightnessToAdd > 100) {
-            this.brightness = 100;
-        } else {
-            this.brightness += brightnessToAdd;
-        }
 
-
+        this.brightness = Math.min(100, this.brightness + brightnessToAdd);
     }
 
     @Override
     public void aumentaLuminosita() {
-        if (this.brightness < 100) {
-            this.brightness += 1;
-        }
+        aumentaLuminosita(1);
     }
 
     @Override
     public void diminuisciLuminosita(int brightnessToRemove) {
         brightnessToRemove = Math.abs(brightnessToRemove);
-        if (this.brightness - brightnessToRemove < 0) {
-            this.brightness = 0;
-        } else {
-            this.brightness -= brightnessToRemove;
-        }
+        this.brightness = Math.max(0, this.brightness - brightnessToRemove);
+
     }
 
     @Override
     public void diminuisciLuminosita() {
-        if (this.brightness > 0) {
-            this.brightness -= 1;
-        }
+        diminuisciLuminosita(1);
 
     }
 
