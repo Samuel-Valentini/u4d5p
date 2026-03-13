@@ -1,7 +1,7 @@
-package player.multimediaelement.playable;
+package player.playable;
 
-import player.multimediaelement.Type;
-import player.multimediaelement.brightness.Brightness;
+import player.Type;
+import player.brightness.Brightness;
 
 public class Video extends Playable implements Brightness {
     private int brightness;

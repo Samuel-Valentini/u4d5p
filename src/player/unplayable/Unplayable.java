@@ -1,7 +1,7 @@
-package player.multimediaelement.unplayable;
+package player.unplayable;
 
-import player.multimediaelement.MultimediaElement;
-import player.multimediaelement.Type;
+import player.MultimediaElement;
+import player.Type;
 
 public abstract class Unplayable extends MultimediaElement {
     public Unplayable(String title, Type type) {

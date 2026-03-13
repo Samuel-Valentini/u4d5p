@@ -1,6 +1,6 @@
-package player.multimediaelement.playable;
+package player.playable;
 
-import player.multimediaelement.Type;
+import player.Type;
 
 public class Audio extends Playable {
     public Audio(String title, int duration, int volume) {

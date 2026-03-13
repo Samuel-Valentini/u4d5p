@@ -1,7 +1,7 @@
-package player.multimediaelement.playable;
+package player.playable;
 
-import player.multimediaelement.MultimediaElement;
-import player.multimediaelement.Type;
+import player.MultimediaElement;
+import player.Type;
 
 public abstract class Playable extends MultimediaElement {
 

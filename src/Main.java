@@ -1,9 +1,9 @@
-import player.multimediaelement.MultimediaElement;
-import player.multimediaelement.Type;
-import player.multimediaelement.playable.Audio;
-import player.multimediaelement.playable.Playable;
-import player.multimediaelement.playable.Video;
-import player.multimediaelement.unplayable.Image;
+import player.MultimediaElement;
+import player.Type;
+import player.playable.Audio;
+import player.playable.Playable;
+import player.playable.Video;
+import player.unplayable.Image;
 
 import java.util.Scanner;
 
@@ -18,7 +18,8 @@ public class Main {
 
         String input = scanner.nextLine();
         int arrayLength;
-        if (input.isBlank()) {
+        if (input.isBlank() || Integer.parseInt(input) == 0) {
+            System.out.println("Hai inserito 0 o non hai inserito un numero, viene inserito il valore di default.");
             arrayLength = 5;
         } else {
             try {

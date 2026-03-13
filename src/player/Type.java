@@ -1,4 +1,4 @@
-package player.multimediaelement;
+package player;
 
 public enum Type {
     IMAGE,

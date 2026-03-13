@@ -1,7 +1,7 @@
-package player.multimediaelement.unplayable;
+package player.unplayable;
 
-import player.multimediaelement.Type;
-import player.multimediaelement.brightness.Brightness;
+import player.Type;
+import player.brightness.Brightness;
 
 public class Image extends Unplayable implements Brightness {
 
