@@ -195,10 +195,12 @@ public class Main {
             MultimediaElement actualElement = arrayOfMultimediaElement[toPlay - 1];
 
 
-            if (actualElement instanceof Playable on) {
+            if (actualElement instanceof Playable) {
+                Playable on = (Playable) actualElement;
                 on.play();
 
-            } else if (actualElement instanceof Image active) {
+            } else if (actualElement instanceof Image) {
+                Image active = (Image) actualElement;
                 active.show();
             }
 
