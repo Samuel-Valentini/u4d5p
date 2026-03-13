@@ -1,5 +1,4 @@
 import player.MultimediaElement;
-import player.Type;
 import player.playable.Audio;
 import player.playable.Playable;
 import player.playable.Video;
@@ -193,16 +192,16 @@ public class Main {
                 break;
             }
 
-            Type actualType = arrayOfMultimediaElement[toPlay - 1].getType();
             MultimediaElement actualElement = arrayOfMultimediaElement[toPlay - 1];
 
-            if (Type.AUDIO == actualType || Type.VIDEO == actualType) {
 
-                Playable on = (Playable) actualElement;
+            if (actualElement instanceof Playable on) {
+
+                on = (Playable) actualElement;
                 on.play();
 
-            } else if (Type.IMAGE == actualType) {
-                Image active = (Image) actualElement;
+            } else if (actualElement instanceof Image active) {
+                active = (Image) actualElement;
                 active.show();
             }
 
