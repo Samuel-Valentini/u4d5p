@@ -40,6 +40,7 @@ public class Image extends Unplayable implements Brightness {
 
     @Override
     public void aumentaLuminosita(int brightnessToAdd) {
+        brightnessToAdd = Math.abs(brightnessToAdd);
         if (this.brightness + brightnessToAdd > 100) {
             this.brightness = 100;
         } else {
@@ -58,6 +59,7 @@ public class Image extends Unplayable implements Brightness {
 
     @Override
     public void diminuisciLuminosita(int brightnessToRemove) {
+        brightnessToRemove = Math.abs(brightnessToRemove);
         if (this.brightness - brightnessToRemove < 0) {
             this.brightness = 0;
         } else {

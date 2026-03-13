@@ -11,9 +11,9 @@ public abstract class Playable extends MultimediaElement {
     public Playable(String title, Type type, int duration, int volume) {
         super(title, type);
         this.duration = Math.abs(duration);
-        if (this.volume < 0) {
+        if (volume < 0) {
             this.volume = 0;
-        } else if (this.volume > 100) {
+        } else if (volume > 100) {
             this.volume = 100;
         } else this.volume = volume;
     }
@@ -32,7 +32,7 @@ public abstract class Playable extends MultimediaElement {
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+        this.volume = Math.max(0, Math.min(100, volume));
     }
 
     public abstract void play();
@@ -44,6 +44,7 @@ public abstract class Playable extends MultimediaElement {
     }
 
     public void abbassaVolume(int volumeToRemove) {
+        volumeToRemove = Math.abs(volumeToRemove);
         if (this.volume > volumeToRemove) {
             this.volume -= volumeToRemove;
         } else {
@@ -58,6 +59,7 @@ public abstract class Playable extends MultimediaElement {
     }
 
     public void alzaVolume(int volumeToAdd) {
+        volumeToAdd = Math.abs(volumeToAdd);
         if (this.volume + volumeToAdd > 100) {
             this.volume = 100;
         } else {
