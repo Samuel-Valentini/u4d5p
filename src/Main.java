@@ -1,3 +1,4 @@
+import player.multimediaelement.playable.Audio;
 import player.multimediaelement.playable.Video;
 import player.multimediaelement.unplayable.Image;
 
@@ -25,6 +26,9 @@ public class Main {
         vid1.aumentaLuminosita(5);
         vid1.abbassaVolume(5);
         vid1.play();
+
+        Audio aud1 = new Audio("Suoni celebri", 3, 5);
+        aud1.play();
 
     }
 }
