@@ -1,7 +1,11 @@
 package player.multimediaelement.brightness;
 
 public interface Brightness {
-    void aumentaLuminosita(int brightness);
+    void aumentaLuminosita(int brightnessToAdd);
 
-    void diminuisciLuminosita(int brightness);
+    void aumentaLuminosita();
+
+    void diminuisciLuminosita(int brightnessToRemove);
+
+    void diminuisciLuminosita();
 }

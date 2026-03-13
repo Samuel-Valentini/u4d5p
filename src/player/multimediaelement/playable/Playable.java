@@ -8,18 +8,20 @@ public abstract class Playable extends MultimediaElement {
     private final int duration;
     private int volume;
 
-
-    public Playable(String title, Type type, int duration) {
-        super(title, type);
-        this.duration = duration;
-        this.volume = 50;
-    }
-
     public Playable(String title, Type type, int duration, int volume) {
         super(title, type);
-        this.duration = duration;
-        this.volume = volume;
+        this.duration = Math.abs(duration);
+        if (this.volume < 0) {
+            this.volume = 0;
+        } else if (this.volume > 100) {
+            this.volume = 100;
+        } else this.volume = volume;
     }
+
+    public Playable(String title, Type type, int duration) {
+        this(title, type, duration, 50);
+    }
+
 
     public int getDuration() {
         return duration;
