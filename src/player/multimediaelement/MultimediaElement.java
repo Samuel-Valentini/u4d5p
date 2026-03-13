@@ -17,4 +17,11 @@ public abstract class MultimediaElement {
     public Type getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return
+                "titolo='" + title + '\'' +
+                        ", tipo=" + type;
+    }
 }

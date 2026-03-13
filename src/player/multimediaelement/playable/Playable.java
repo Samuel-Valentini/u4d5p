@@ -58,6 +58,13 @@ public abstract class Playable extends MultimediaElement {
         }
     }
 
+    @Override
+    public String toString() {
+        return
+                super.toString() + ", durata=" + duration +
+                        ", volume=" + volume;
+    }
+
     public void alzaVolume(int volumeToAdd) {
         volumeToAdd = Math.abs(volumeToAdd);
         if (this.volume + volumeToAdd > 100) {

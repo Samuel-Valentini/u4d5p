@@ -8,5 +8,10 @@ public abstract class Unplayable extends MultimediaElement {
         super(title, type);
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public abstract void show();
 }

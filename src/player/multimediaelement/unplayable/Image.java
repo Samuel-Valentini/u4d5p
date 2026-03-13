@@ -74,4 +74,11 @@ public class Image extends Unplayable implements Brightness {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Image{" + super.toString() +
+                ", luminosità=" + brightness +
+                "}";
+    }
 }

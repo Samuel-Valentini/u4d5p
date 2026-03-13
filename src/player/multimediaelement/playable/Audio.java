@@ -22,4 +22,9 @@ public class Audio extends Playable {
             System.out.println(showString);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Audio{ " + super.toString() + " } ";
+    }
 }

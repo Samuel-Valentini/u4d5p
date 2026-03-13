@@ -86,4 +86,12 @@ public class Video extends Playable implements Brightness {
             System.out.println(showString);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Video{" + super.toString() +
+                ", luminosità=" + brightness +
+                "} ";
+
+    }
 }
