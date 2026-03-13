@@ -13,6 +13,10 @@ public class Main {
         img1.diminuisciLuminosita(10);
         img1.show();
         System.out.println(img1.getBrightness());
+        img1.setBrightness(200);
+        System.out.println(img1.getBrightness());
+        img1.setBrightness(-200);
+        System.out.println(img1.getBrightness());
 
     }
 }

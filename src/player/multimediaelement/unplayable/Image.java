@@ -25,7 +25,7 @@ public class Image extends Unplayable implements Brightness {
     }
 
     public void setBrightness(int brightness) {
-        this.brightness = brightness;
+        this.brightness = Math.max(0, Math.min(100, brightness));
     }
 
     @Override
