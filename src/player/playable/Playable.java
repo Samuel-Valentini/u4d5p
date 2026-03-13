@@ -11,17 +11,12 @@ public abstract class Playable extends MultimediaElement {
     public Playable(String title, Type type, int duration, int volume) {
         super(title, type);
         this.duration = Math.abs(duration);
-        if (volume < 0) {
-            this.volume = 0;
-        } else if (volume > 100) {
-            this.volume = 100;
-        } else this.volume = volume;
+        this.volume = Math.max(0, Math.min(100, volume));
     }
 
     public Playable(String title, Type type, int duration) {
         this(title, type, duration, 50);
     }
-
 
     public int getDuration() {
         return duration;
@@ -37,25 +32,13 @@ public abstract class Playable extends MultimediaElement {
 
     public abstract void play();
 
-    public void abbassaVolume() {
-        if (this.volume > 0) {
-            volume -= 1;
-        }
-    }
-
     public void abbassaVolume(int volumeToRemove) {
         volumeToRemove = Math.abs(volumeToRemove);
-        if (this.volume > volumeToRemove) {
-            this.volume -= volumeToRemove;
-        } else {
-            this.volume = 0;
-        }
+        this.volume = Math.max(0, this.volume - volumeToRemove);
     }
 
-    public void alzaVolume() {
-        if (this.volume < 100) {
-            this.volume += 1;
-        }
+    public void abbassaVolume() {
+        abbassaVolume(1);
     }
 
     @Override
@@ -67,10 +50,10 @@ public abstract class Playable extends MultimediaElement {
 
     public void alzaVolume(int volumeToAdd) {
         volumeToAdd = Math.abs(volumeToAdd);
-        if (this.volume + volumeToAdd > 100) {
-            this.volume = 100;
-        } else {
-            this.volume += volumeToAdd;
-        }
+        this.volume = Math.min(100, this.volume + volumeToAdd);
+    }
+
+    public void alzaVolume() {
+        alzaVolume(1);
     }
 }
