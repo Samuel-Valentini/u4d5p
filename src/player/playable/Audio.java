@@ -14,9 +14,7 @@ public class Audio extends Playable {
     @Override
     public void play() {
         StringBuilder showString = new StringBuilder(getTitle()).append(" ");
-        for (int i = 0; i < getVolume(); i++) {
-            showString.append("!");
-        }
+        showString.append("!".repeat(Math.max(0, getVolume())));
 
         for (int i = 0; i < getDuration(); i++) {
             System.out.println(showString);

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         // player start
 
         Scanner scanner = new Scanner(System.in);
@@ -62,7 +62,7 @@ public class Main {
                     title = scanner.nextLine();
 
                     while (true) {
-                        System.out.println("Inserisci la durata come numero intero");
+                        System.out.println("Inserisci la durata come numero intero maggiore di 0");
                         try {
                             duration = Integer.parseInt(scanner.nextLine());
                             if (duration > 0) {
@@ -98,7 +98,7 @@ public class Main {
                     System.out.println("Inserisci il titolo del video:");
                     title = scanner.nextLine();
                     while (true) {
-                        System.out.println("Inserisci la durata come numero intero");
+                        System.out.println("Inserisci la durata come numero intero maggiore di 0");
                         try {
                             duration = Integer.parseInt(scanner.nextLine());
                             if (duration > 0) {
