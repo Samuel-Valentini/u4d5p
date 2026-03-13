@@ -9,11 +9,7 @@ public class Image extends Unplayable implements Brightness {
 
     public Image(String title, int brightness) {
         super(title, Type.IMAGE);
-        if (brightness < 0) {
-            this.brightness = 0;
-        } else if (brightness > 100) {
-            this.brightness = 100;
-        } else this.brightness = brightness;
+        this.brightness = Math.max(0, Math.min(brightness, 100));
     }
 
     public Image(String title) {
@@ -30,10 +26,8 @@ public class Image extends Unplayable implements Brightness {
 
     @Override
     public void show() {
-        StringBuilder showString = new StringBuilder(getTitle()).append(" ");
-        for (int i = 0; i < brightness; i++) {
-            showString.append("*");
-        }
+        String showString = getTitle() + " " +
+                "*".repeat(Math.max(0, brightness));
         System.out.println(showString);
 
     }
