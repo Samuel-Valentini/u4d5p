@@ -18,17 +18,17 @@ public class Main {
 
         String input = scanner.nextLine();
         int arrayLength;
-        if (input.isBlank() || Integer.parseInt(input) == 0) {
-            System.out.println("Hai inserito 0 o non hai inserito un numero, viene inserito il valore di default.");
-            arrayLength = 5;
-        } else {
-            try {
-                arrayLength = Integer.parseInt(input);
-            } catch (NumberFormatException error) {
+        try {
+            arrayLength = Integer.parseInt(input);
+            if (arrayLength == 0) {
                 arrayLength = 5;
+                System.out.println("Hai inserito 0, viene inserito il valore di default.");
             }
-
+        } catch (NumberFormatException error) {
+            arrayLength = 5;
+            System.out.println("Non hai inserito un numero, viene inserito il valore di default.");
         }
+
 
         System.out.println("Hai deciso di caricare " + arrayLength + " elementi.");
 
