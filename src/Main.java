@@ -20,9 +20,9 @@ public class Main {
         int arrayLength;
         try {
             arrayLength = Integer.parseInt(input);
-            if (arrayLength == 0) {
+            if (arrayLength <= 0) {
                 arrayLength = 5;
-                System.out.println("Hai inserito 0, viene inserito il valore di default.");
+                System.out.println("Hai inserito un numero minore o uguale a 0, viene inserito il valore di default.");
             }
         } catch (NumberFormatException error) {
             arrayLength = 5;
