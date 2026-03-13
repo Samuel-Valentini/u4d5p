@@ -196,12 +196,9 @@ public class Main {
 
 
             if (actualElement instanceof Playable on) {
-
-                on = (Playable) actualElement;
                 on.play();
 
             } else if (actualElement instanceof Image active) {
-                active = (Image) actualElement;
                 active.show();
             }
 
