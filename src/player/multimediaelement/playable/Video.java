@@ -89,9 +89,8 @@ public class Video extends Playable implements Brightness {
 
     @Override
     public String toString() {
-        return "Video{" + super.toString() +
-                ", luminosità=" + brightness +
-                "} ";
+        return super.toString() +
+                ", luminosità=" + brightness;
 
     }
 }

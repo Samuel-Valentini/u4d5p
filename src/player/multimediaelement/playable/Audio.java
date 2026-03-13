@@ -25,6 +25,6 @@ public class Audio extends Playable {
 
     @Override
     public String toString() {
-        return "Audio{ " + super.toString() + " } ";
+        return super.toString();
     }
 }

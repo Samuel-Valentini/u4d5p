@@ -1,5 +1,7 @@
 import player.multimediaelement.MultimediaElement;
+import player.multimediaelement.Type;
 import player.multimediaelement.playable.Audio;
+import player.multimediaelement.playable.Playable;
 import player.multimediaelement.playable.Video;
 import player.multimediaelement.unplayable.Image;
 
@@ -33,7 +35,7 @@ public class Main {
 
         for (int i = 0; i < arrayLength; i++) {
 
-            System.out.println("Perfetto, inseriamo l'elemento n. " + i);
+            System.out.println("Perfetto, inseriamo l'elemento n. " + (i + 1));
 
             String fileType;
 
@@ -92,6 +94,37 @@ public class Main {
             }
 
         }
+
+        System.out.println("Gli elementi scelti sono:");
+        for (int i = 0; i < arrayOfMultimediaElement.length; i++) {
+            System.out.println("Elemento n. " + (i + 1) + ": " + arrayOfMultimediaElement[i]);
+
+        }
+
+       
+        while (true) {
+            System.out.println("Inserisci il numero dell'elemento che vuoi riprodurre, 0 per uscire.");
+            int toPlay = Integer.parseInt(scanner.nextLine());
+            if (toPlay == 0) {
+                break;
+            }
+            ;
+            Type actualType = arrayOfMultimediaElement[toPlay - 1].getType();
+            MultimediaElement actualElement = arrayOfMultimediaElement[toPlay - 1];
+
+            if (Type.AUDIO == actualType || Type.VIDEO == actualType) {
+
+                Playable on = (Playable) actualElement;
+                on.play();
+
+            } else if (Type.IMAGE == actualType) {
+                Image active = (Image) actualElement;
+                active.show();
+            }
+
+
+        }
+
 
     }
 

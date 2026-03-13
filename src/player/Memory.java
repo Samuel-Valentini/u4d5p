@@ -14,5 +14,8 @@ public class Memory {
         return arrayOfElements;
     }
 
-    
+    public void setArrayOfElements(MultimediaElement[] arrayOfElements) {
+        this.arrayOfElements = arrayOfElements;
+    }
+
 }
