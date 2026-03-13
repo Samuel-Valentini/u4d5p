@@ -59,10 +59,34 @@ public class Main {
                 case "a": {
                     System.out.println("Inserisci il titolo dell'audio:");
                     title = scanner.nextLine();
-                    System.out.println("Inserisci la durata come numero intero");
-                    duration = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Inserisci il volume con un numero intero da 0 a 100");
-                    volume = (Math.min(Math.abs(Integer.parseInt(scanner.nextLine())), 100));
+
+                    while (true) {
+                        System.out.println("Inserisci la durata come numero intero");
+                        try {
+                            duration = Integer.parseInt(scanner.nextLine());
+                            if (duration > 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero maggiore di 0");
+                        }
+
+                    }
+
+                    while (true) {
+                        System.out.println("Inserisci il volume con un numero intero da 0 a 100");
+                        try {
+                            volume = Integer.parseInt(scanner.nextLine());
+                            if (volume <= 100 && volume >= 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero compreso fra 0 e 100");
+
+                        }
+                    }
+
+
                     audio = new Audio(title, duration, volume);
                     arrayOfMultimediaElement[i] = audio;
                     System.out.println(audio);
@@ -72,12 +96,44 @@ public class Main {
                 case "v": {
                     System.out.println("Inserisci il titolo del video:");
                     title = scanner.nextLine();
-                    System.out.println("Inserisci la durata come numero intero");
-                    duration = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Inserisci il volume con un numero intero da 0 a 100");
-                    volume = (Math.min(Math.abs(Integer.parseInt(scanner.nextLine())), 100));
-                    System.out.println("Inserisci la luminosità con un numero intero da 0 a 100");
-                    brightness = (Math.min(Math.abs(Integer.parseInt(scanner.nextLine())), 100));
+                    while (true) {
+                        System.out.println("Inserisci la durata come numero intero");
+                        try {
+                            duration = Integer.parseInt(scanner.nextLine());
+                            if (duration > 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero maggiore di 0");
+                        }
+
+                    }
+                    while (true) {
+                        System.out.println("Inserisci il volume con un numero intero da 0 a 100");
+                        try {
+                            volume = Integer.parseInt(scanner.nextLine());
+                            if (volume <= 100 && volume >= 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero compreso fra 0 e 100");
+
+                        }
+                    }
+
+                    while (true) {
+                        System.out.println("Inserisci la luminosità con un numero intero da 0 a 100");
+                        try {
+                            brightness = Integer.parseInt(scanner.nextLine());
+                            if (brightness <= 100 && brightness >= 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero compreso fra 0 e 100");
+
+                        }
+                    }
+
                     video = new Video(title, duration, volume, brightness);
                     arrayOfMultimediaElement[i] = video;
                     System.out.println(video);
@@ -86,8 +142,18 @@ public class Main {
                 case "i": {
                     System.out.println("Inserisci il titolo dell'immagine:");
                     title = scanner.nextLine();
-                    System.out.println("Inserisci la luminosità con un numero intero da 0 a 100");
-                    brightness = (Math.min(Math.abs(Integer.parseInt(scanner.nextLine())), 100));
+                    while (true) {
+                        System.out.println("Inserisci la luminosità con un numero intero da 0 a 100");
+                        try {
+                            brightness = Integer.parseInt(scanner.nextLine());
+                            if (brightness <= 100 && brightness >= 0) {
+                                break;
+                            }
+                        } catch (NumberFormatException error) {
+                            System.out.println("Numero non valido, riprova con un numero intero compreso fra 0 e 100");
+
+                        }
+                    }
                     image = new Image(title, brightness);
                     arrayOfMultimediaElement[i] = image;
                     System.out.println(image);
@@ -105,13 +171,27 @@ public class Main {
         }
 
         while (true) {
+            int toPlay;
             System.out.println();
-            System.out.println("Inserisci il numero dell'elemento che vuoi riprodurre, 0 per uscire.");
-            int toPlay = Integer.parseInt(scanner.nextLine());
+            while (true) {
+                System.out.println("Inserisci il numero dell'elemento che vuoi riprodurre, 0 per uscire.");
+                try {
+                    toPlay = Integer.parseInt(scanner.nextLine());
+                    if (toPlay >= 0 && toPlay <= arrayOfMultimediaElement.length) {
+                        break;
+                    } else {
+                        System.out.println("La scelta non è valida inserire un numero fra 0 (per uscire) e " + arrayOfMultimediaElement.length + ".");
+                    }
+                } catch (NumberFormatException error) {
+                    System.out.println("La scelta non è valida inserire un numero fra 0 (per uscire) e " + arrayOfMultimediaElement.length + ".");
+                }
+            }
+
+
             if (toPlay == 0) {
                 break;
             }
-            ;
+
             Type actualType = arrayOfMultimediaElement[toPlay - 1].getType();
             MultimediaElement actualElement = arrayOfMultimediaElement[toPlay - 1];
 
