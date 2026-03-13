@@ -7,17 +7,17 @@ public class Image extends Unplayable implements Brightness {
 
     private int brightness;
 
-    public Image(String title, Type type, int brightness) {
-        super(title, type);
-        if (this.brightness < 0) {
+    public Image(String title, int brightness) {
+        super(title, Type.IMAGE);
+        if (brightness < 0) {
             this.brightness = 0;
-        } else if (this.brightness > 100) {
+        } else if (brightness > 100) {
             this.brightness = 100;
         } else this.brightness = brightness;
     }
 
-    public Image(String title, Type type) {
-        this(title, type, 50);
+    public Image(String title) {
+        this(title, 50);
     }
 
     public int getBrightness() {
